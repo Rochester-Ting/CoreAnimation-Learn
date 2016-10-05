@@ -13,8 +13,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
 /** <#注释#>*/
 @property (nonatomic,strong) UIButton *selectedBtn;
+
+/** <#注释#>*/
+@property (nonatomic,strong) CADisplayLink *link;
 @end
 @implementation WheelView
+- (CADisplayLink *)link{
+    if (!_link) {
+        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateTime)];
+        [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    return _link;
+}
 + (instancetype)wheelView{
     return [[NSBundle mainBundle] loadNibNamed:@"WheelView" owner:nil options:nil].firstObject;
 }
@@ -32,7 +42,7 @@
     CGFloat btnX = 0;
     CGFloat btnY = 0;
     CGFloat btnW = 65;
-    CGFloat btnH = 130;
+    CGFloat btnH = 148;
     CGFloat angle = 0;
 //    获取需要截取的图片
     UIImage *originImage = [UIImage imageNamed:@"LuckyAstrology"];
@@ -76,20 +86,37 @@
     self.selectedBtn = btn;
 }
 - (IBAction)startSelectNum:(id)sender {
-    
-}
-- (void)start{
+    self.link.paused = YES;
     CABasicAnimation *anim = [CABasicAnimation animation];
     anim.keyPath = @"transform.rotation";
-    anim.toValue = @M_PI;
-    anim.duration = 2;
-//    anim.fillMode = @"forwards";
-//    anim.removedOnCompletion = NO;
-    anim.repeatDuration = MAXFLOAT;
+    anim.toValue = @(M_PI * 4);
+    anim.duration = 1;
+    anim.delegate = self;
     [self.imageV.layer addAnimation:anim forKey:nil];
+}
+//当动画完成时调用.
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    //动画结束时把选中的按钮指上最上方.
+    //当前选中的按钮,旋转角度.
+    CGAffineTransform transform = self.selectedBtn.transform;
+    CGFloat angle = atan2f(transform.b, transform.a);
+    
+    
+    //让contentV倒着旋转回去.
+    self.imageV.transform = CGAffineTransformMakeRotation(-angle);
+    NSLog(@"%s",__func__);
+    
+}
+
+- (void)start{
+    self.link.paused = NO;
+    self.imageV.transform = CGAffineTransformRotate(self.imageV.transform, M_PI / 180);
 }
 
 - (void)zanting{
-    
+    self.link.paused = YES;
+}
+- (void)updateTime{
+    [self start];
 }
 @end
