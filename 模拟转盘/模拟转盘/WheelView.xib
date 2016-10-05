@@ -12,29 +12,37 @@
             <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyBaseBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Cak-Xf-ZMA"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyRotateWheel" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-G2-5yc"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LuckyBaseBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Cak-Xf-ZMA">
+                    <frame key="frameInset" width="286" height="286"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LuckyRotateWheel" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-G2-5yc">
+                    <frame key="frameInset" width="286" height="286"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BY-hm-1tD">
+                    <frame key="frameInset" minX="103.5" minY="103.5" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="LuckyCenterButton"/>
+                    <state key="selected" image="LuckyCenterButtonPressed"/>
+                    <connections>
+                        <action selector="startSelectNum:" destination="iN0-l3-epB" eventType="touchUpInside" id="vjM-b1-gQw"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="Cak-Xf-ZMA" secondAttribute="bottom" id="ILh-5N-vnU"/>
-                <constraint firstItem="Cak-Xf-ZMA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JiS-pn-Iqt"/>
-                <constraint firstAttribute="bottom" secondItem="0ja-G2-5yc" secondAttribute="bottom" id="MPI-ms-08D"/>
-                <constraint firstAttribute="trailing" secondItem="0ja-G2-5yc" secondAttribute="trailing" id="ZLH-lT-dZa"/>
-                <constraint firstAttribute="trailing" secondItem="Cak-Xf-ZMA" secondAttribute="trailing" id="ZrR-ak-sWO"/>
-                <constraint firstItem="0ja-G2-5yc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jcr-X3-tkp"/>
-                <constraint firstItem="Cak-Xf-ZMA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nmy-BH-tzf"/>
-                <constraint firstItem="0ja-G2-5yc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vU4-T8-zl6"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="imageV" destination="0ja-G2-5yc" id="VD1-N2-Scx"/>
             </connections>
+            <point key="canvasLocation" x="-17" y="-76"/>
         </view>
     </objects>
     <resources>
         <image name="LuckyBaseBackground" width="286" height="286"/>
+        <image name="LuckyCenterButton" width="81" height="81"/>
+        <image name="LuckyCenterButtonPressed" width="81" height="81"/>
         <image name="LuckyRotateWheel" width="286" height="286"/>
     </resources>
 </document>

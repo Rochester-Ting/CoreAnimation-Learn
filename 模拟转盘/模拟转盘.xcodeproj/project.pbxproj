@@ -17,6 +17,7 @@
 		CAA20BDC1DA54B42006AFF1B /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA20BDB1DA54B42006AFF1B /* ____UITests.m */; };
 		CAA20BEB1DA54C2E006AFF1B /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA20BEA1DA54C2E006AFF1B /* WheelView.m */; };
 		CAA20BED1DA54C38006AFF1B /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA20BEC1DA54C38006AFF1B /* WheelView.xib */; };
+		CAA20BF01DA558B6006AFF1B /* RRBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA20BEF1DA558B6006AFF1B /* RRBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		CAA20BE91DA54C2E006AFF1B /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
 		CAA20BEA1DA54C2E006AFF1B /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		CAA20BEC1DA54C38006AFF1B /* WheelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
+		CAA20BEE1DA558B6006AFF1B /* RRBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRBtn.h; sourceTree = "<group>"; };
+		CAA20BEF1DA558B6006AFF1B /* RRBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRBtn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				CAA20BE91DA54C2E006AFF1B /* WheelView.h */,
 				CAA20BEA1DA54C2E006AFF1B /* WheelView.m */,
 				CAA20BEC1DA54C38006AFF1B /* WheelView.xib */,
+				CAA20BEE1DA558B6006AFF1B /* RRBtn.h */,
+				CAA20BEF1DA558B6006AFF1B /* RRBtn.m */,
 			);
 			path = "模拟转盘";
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				CAA20BBE1DA54B42006AFF1B /* ViewController.m in Sources */,
 				CAA20BBB1DA54B42006AFF1B /* AppDelegate.m in Sources */,
 				CAA20BEB1DA54C2E006AFF1B /* WheelView.m in Sources */,
+				CAA20BF01DA558B6006AFF1B /* RRBtn.m in Sources */,
 				CAA20BB81DA54B42006AFF1B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
