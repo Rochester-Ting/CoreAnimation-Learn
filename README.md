@@ -17,4 +17,4 @@
 ##音量振动条
 ![未知图片](https://github.com/Rochester-Ting/Picture/blob/master/yinliangzhendong.gif)
 ##心跳效果
-![未知图片](https://github.com/Rochester-Ting/Picture/blob/master/zhishidengdaiqi.gif)
+![未知图片](https://github.com/Rochester-Ting/Picture/blob/master/xintiao.gif)
